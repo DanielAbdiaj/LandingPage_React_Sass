@@ -1,0 +1,52 @@
+
+@use '../../../scss/mixins.scss' as *;
+
+    .banner{
+
+        &__container{
+        @include flex-container(column,center,center);
+        gap: 60px;
+            }
+        
+        
+        &__title{
+            @include text-styles('4xl','semi-bold');
+            text-align: center;
+        }
+
+        &__iconsContainer{
+            @include flex-container(row,center,center);
+            gap: 100px;
+        }
+
+        &__iconContainer{
+            @include flex-container(column,center,center);
+            gap: 20px;
+        }
+
+        &__logo{
+            height: 108px;
+            width: 108px;
+        }
+
+        &__iconText{
+            @include text-styles('2xl','medium');
+        }
+
+        &__mobileContainer{
+            display: none;
+        }
+
+        @include mobile{
+
+            &__normalContainer{
+                display: none;
+            }
+            &__mobileContainer{
+                display: block;    
+            }
+
+            
+        }
+    }
+   

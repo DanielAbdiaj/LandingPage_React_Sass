@@ -1,0 +1,100 @@
+
+
+
+@use '../../../scss/mixins.scss' as *;
+@use '../../../scss/colors.scss' as *;
+
+.dropdownCard{
+
+
+    &__container{
+        @include flex-container(row,center,flex-start);
+        gap: 40px;
+        padding: 54px 60px;
+        @include text-styles('4xl','semi-bold');
+        background-color: $grey-50;
+        border-radius: 20px;
+      
+    }
+
+    &__container2{  
+        @include flex-container(column,center,center);
+        gap: 24px;
+    }
+
+    &__header{
+        @include flex-container(row,center,center);
+        
+    }
+
+    &__content{
+        @include flex-container(column,center,flex-start);
+        gap: 40px;
+    }
+
+    &__number{
+        color: $grey-700;
+        width: 50px;
+    }
+
+    &__number.open{
+           @include my-text-gradient(#00796D,#38C682)
+    }
+   
+    &__title{  
+        width: 1030px;
+        color: $grey-700;
+    }
+
+    &__title.open{
+        @include my-text-gradient(#00796D,#38C682)
+ }
+
+
+    &__text{
+        @include text-styles('lg','regular');
+        color: $grey-600;
+    }
+
+    &__image{
+        border-radius: 20px;
+    }
+
+    @include mobile{
+
+        &__container{
+            padding:24px;
+            @include text-styles('xl','bold');
+            gap: 12px;
+        }
+
+        &__number{
+            width: 32px;
+        }
+
+        &__title{   
+            width: 211px;
+        }
+
+        &__arrowDown,&__arrowRight{
+            width: 24px;
+            height: 24px;
+        }
+
+        &__text{
+            @include text-styles('md','regular');
+            color: $grey-600;
+        }
+
+        &__image{
+            width: 300px;
+            height: 133px;
+        }
+
+        &__container2{  
+            gap: 16px;
+        }
+        
+    }
+
+}

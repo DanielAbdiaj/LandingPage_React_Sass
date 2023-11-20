@@ -1,0 +1,39 @@
+@function get-font-weight($weight) {
+    @if $weight == 'regular' {
+      @return 400;
+    } @else if $weight == 'medium' {
+      @return 500;
+    } @else if $weight == 'semi-bold' {
+        @return 600;
+    }@else if $weight == 'bold' {
+      @return 700;
+    }@else {
+      @error "Invalid font weight: #{$weight}. Use 'regular', 'semi-bold', or 'bold'.";
+    }
+  }
+
+
+  @function get-font-size($size) {
+    @if $size == '6xl' {
+      @return 44px;
+    } @else if $size == '5xl' {
+      @return 36px;
+    } @else if $size == '4xl' {
+      @return 32px;
+    } @else if $size == '3xl' {
+      @return 28px;
+    } @else if $size == '2xl' {
+      @return 24px;
+    } @else if $size == 'xl' {
+      @return 20px;
+    } @else if $size == 'lg' {
+      @return 18px;
+    } @else if $size == 'md' {
+      @return 16px;
+    } @else if $size == 'sm' {
+      @return 14px;
+    } @else {
+      @error "Invalid font size: #{$size}. Use 'lg', 'md', 'sm', 'xl', '2xl', '3xl', '4xl', '5xl', or '6xl'.";
+    }
+  }
+  

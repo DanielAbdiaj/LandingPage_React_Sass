@@ -1,0 +1,133 @@
+
+
+
+@use '../../scss/colors.scss' as *;
+@use '../../scss/mixins.scss' as *;
+
+
+
+.footer{
+   
+   &__bgcontainer{
+        background: url('../../icons/bg_footer.svg') no-repeat top /cover;
+        @include flex-container(column,flex-start,center);
+    }
+
+    &__container{
+        @include flex-container(column,center,normal);
+        gap: 60px;
+        padding: 80px 60px;
+    }
+
+    &__header{
+        @include flex-container(row,space-around,center);
+        padding-bottom: 50px;
+    }
+
+    &__title{
+        @include text-styles('6xl','semi-bold');
+    
+    }
+
+    &__content{
+            @include flex-container(row,space-between,center);
+            gap: 292px;
+            @include text-styles('lg','regular');
+            color: $grey-200;
+           
+
+            &--agenoneEmail{
+                @include flex-container(column,center,flex-start);
+                gap: 30px;
+            }
+
+            &--logo{
+                width: 220px;
+                height: 70px;
+            }
+
+            &--linksContainer{
+                @include flex-container(row,center,center);
+                gap: 100px;
+                align-items: normal;
+            }
+    }
+
+    &__ulist{
+        @include flex-container(column,flex-start,flex-start);
+        gap: 16px;
+    }
+
+    &__link{
+        @include text-styles('md','regular');
+        color: $grey-200;
+
+        &--title{
+            color: white;
+        }
+    }
+
+    &__copyrights{
+        text-align: center;
+
+        &--text{
+            @include text-styles('lg','regular');
+            color: $grey-200;
+        }
+
+    }
+
+    &__divider{
+        height: 1px;
+        background: $grey-700;
+    }
+
+
+    @include mobile{
+
+        &__bgcontainer{
+            background: $grey-900;
+            min-height: 160vh;
+        }
+
+        &__container{
+            gap: 30px;
+            padding: 40px 25px;
+        }
+
+      
+
+        &__header{
+            @include flex-container(column,center,center);
+            gap:24px;
+            
+        }
+        &__title{
+            @include text-styles('2xl','semi-bold');
+            text-align: center;
+            
+        }
+
+        &__content{
+            @include flex-container(column,center,center);
+            gap:40px;
+            @include text-styles('md','regular');
+            
+
+            &--agenoneEmail{
+                gap: 32px;
+            } 
+            &--linksContainer{
+            gap: 90px;
+            @include flex-container(row,flex-start,center);
+            flex-wrap: wrap;
+            align-items: normal;
+            }
+        }
+
+       
+
+    }
+
+   
+}

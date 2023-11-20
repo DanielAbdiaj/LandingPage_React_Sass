@@ -1,0 +1,125 @@
+
+
+@use '../../scss/mixins.scss' as *;
+@use '../../scss/colors.scss' as *;
+@use '../../scss/utilities.scss' as *;
+
+
+.works{
+
+        &__container{
+            @extend .container;
+            @include flex-container(column,center,center);
+            gap:50px;
+            background: url('../../icons/bg_header.png') no-repeat top/ cover ;
+            background-color: $grey-900;
+            padding: 100px 80px;
+        }
+
+        &__headerTitle{
+                line-height: 1;
+                text-align: center;
+                padding: 24px;
+        }
+
+        &__title{
+            display: inline;
+            padding-left: 20px;
+        }
+
+        &__headerText{
+            text-align: center;
+            width: 928px;
+        }
+
+        &__body{
+            @include flex-container(column,center,center);
+            gap: 64px;
+        }
+
+        &__toggleContainer{
+            @include flex-container(row,center,center);
+            gap: 5px;
+            border-radius: 100px;
+            background: white;
+            padding: 10px 10px;
+        }
+
+        &__toggleBtn{
+            background: white;
+            color: $grey-500;
+            @include text-styles('md','medium');
+            cursor: pointer;
+            
+
+            &:hover{
+                background: $primary-500;
+                color: white;
+            }
+
+            &--primary{
+                background: $primary-500;
+                color: white;
+            }
+        }
+
+        &__mobileBtnText{
+            display: none;
+        }
+
+    &__projectContainer{
+        @include flex-container(row,center,center);
+        gap: 50px;
+    }
+
+
+    @include mobile{
+
+
+        &__container{
+            padding: 56px 24px;
+           
+        }
+
+        &__headerTitle{
+            @include text-styles('5xl','bold');
+         }
+
+         &__title{
+            display: inline;
+            @include text-styles('5xl','bold');
+            padding-left: 10px;
+         }
+
+         &__headerText{
+            @include text-styles('sm','medium');
+            display:inline;
+        }
+
+        &__body{
+            gap: 32px;
+        }
+
+        &__toggleContainer{
+            gap: 2px;
+            padding: 10px 10px;
+        }
+        &__mobileBtnText{
+            display: block;
+        }
+        &__desktopBtnText{
+            display: none;
+        }
+
+        &__projectContainer{
+            @include flex-container(column,center,center);
+            gap: 50px;
+        }
+
+    }
+
+
+
+
+
+}

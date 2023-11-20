@@ -1,0 +1,36 @@
+
+@use '../../../../scss/mixins.scss' as *;
+
+
+.slickBanner{
+
+    &__container{
+            width:260px;
+            padding-top: 20px;
+    }
+
+    &__iconContainer{
+        display: flex;
+       align-items: center
+    }
+
+    &__title{
+        @include text-styles('lg','semi-bold');
+        text-align: center;
+        padding-bottom: 40px;
+    }
+
+    &__logo{
+        width: 108px;
+        height: 108px;
+        padding-left: 80px;
+        padding-bottom: 10px;
+    }
+
+    &__iconText{
+        text-align: center;
+        @include text-styles('2xl','medium');
+
+    }
+}
+

@@ -1,0 +1,67 @@
+
+
+@use '../../scss/colors.scss' as *;
+@use '../../scss/mixins.scss' as *;
+
+
+
+.achievements{
+    &__container{
+        padding: 80px 80px;
+        background: $primary-100;
+    }
+
+    &__text{
+        @include text-styles('6xl','medium');
+        color:$grey-800;
+        text-align: center;
+        padding-bottom: 64px;
+    }
+
+    &__numbersContainer{
+        @include flex-container(row,space-evenly,center);
+        background: $primary-500;
+        padding: 32px 32px;
+        border-radius: 20px;
+    }
+
+    &__numbers{
+        text-align: center;
+        @include text-styles('2xl','medium');
+        &--number{
+            padding-bottom: 10px;
+        }
+    }
+
+
+
+        @include mobile{
+
+            &__container{
+                padding: 40px 40px; 
+            }
+            
+            &__text{
+                @include text-styles('2xl','regular');
+                padding-bottom: 32px;
+            }
+
+            &__numbersContainer{
+                @include flex-container(column,space-evenly,center);
+                padding: 30px 16px;
+                gap: 40px;
+            }
+            &__numbers{
+                
+                @include text-styles('md','regular');
+
+                &--number{
+                    font-size: 48px;
+                }
+                
+            }
+
+        }
+    }
+
+

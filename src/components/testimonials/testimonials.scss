@@ -1,0 +1,39 @@
+
+
+@use '../../scss/mixins.scss' as *;
+@use '../../scss/colors.scss' as *;
+@use '../../scss/utilities.scss' as *;
+
+
+.testimonials{
+
+    &__container{
+        
+        @include flex-container(column,center,center);
+        
+    }
+
+
+    &__CardContainer{
+        
+        @include flex-container(row,center,center);
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 40px;
+        padding: 40px 0px;
+    }
+
+
+    @include mobile{
+
+        &__CardContainer{
+
+            @include flex-container(column,center,center);
+           flex-wrap: nowrap;
+            width: 375px;
+           padding: 40px 0px;
+        }
+    }
+
+
+}

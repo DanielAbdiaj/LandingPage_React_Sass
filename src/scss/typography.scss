@@ -1,0 +1,43 @@
+
+
+@use 'mixins.scss' as *;
+@use 'colors.scss' as *;
+
+
+h1{
+    font-weight: 700;
+    font-size: 72px;
+    margin-top: 0 ;
+    line-height: 1.1;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 48px;
+    margin-top: 0 ;
+    line-height: 1.1;
+}
+
+
+
+a{
+    text-decoration: none;
+    color: $white;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+.header--primary{
+    @include my-text-gradient(#00796D,#38C682);
+    font-weight: bold;
+}
+.text--darkBackground{
+    color: $grey-200;
+    @include text-styles('xl','medium');
+}

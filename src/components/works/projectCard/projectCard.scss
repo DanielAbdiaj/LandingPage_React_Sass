@@ -1,0 +1,73 @@
+
+@use '../../../scss/mixins.scss' as *;
+@use '../../../scss/colors.scss' as *;
+
+
+.projectCard{
+
+    &__container{
+        @include flex-container(column,center,flex-start);
+        gap: 20px;
+        padding: 16px;
+        background: $grey-800;
+        border-radius: 20px;
+    }
+
+    &__image{
+        width: 598px;
+        height: 579px;
+        border-radius: 20px;
+        transition: transform 0.3s ease-out;
+    }
+
+    &__imageContainer{
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__imageContainer:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last value) for darkness */
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+        border-radius: 20px;
+      }
+      
+      &__imageContainer:hover::before {
+        opacity: 1;
+      }
+
+    &__title{
+        @include text-styles('4xl','bold');
+    }
+
+    &__text{
+        @include text-styles('xl','regular');
+        color: $grey-200;
+    }
+
+
+    @include mobile{
+        &__container{
+            gap: 16px;
+        }
+
+        &__image{
+            width:310px;
+            height: 300px;
+        }
+
+        &__title{
+            @include text-styles('lg','bold');
+        }
+    
+        &__text{
+            @include text-styles('md','regular');
+        }
+    }
+}

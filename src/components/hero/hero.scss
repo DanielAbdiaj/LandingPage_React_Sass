@@ -1,0 +1,93 @@
+@use '../../scss/mixins.scss' as *;
+@use '../../scss/colors.scss' as *;
+@use '../../scss/utilities.scss' as *;
+
+
+.hero{
+
+    &__container{
+        @include flex-container(column, center,center);
+        @extend .container;
+        gap: 80px;
+        padding-bottom: 40px;    
+    }
+
+                &__caption{
+                    
+                    @include inline-flex-container(row, center,flex-start);
+                    gap: 10px;
+                    padding: 12px 16px;
+                    border-radius: 100px;
+                    background: rgba(255, 255, 255, 0.10);
+                }
+
+                &__captionText{
+                    @include text-styles('sm','medium');
+                }
+
+
+                &__content{
+
+                    @include flex-container(column, center,center);
+                    gap: 40px;
+                    padding: 0px 256px;
+                } 
+
+                &__contentHeader{
+                    text-align: center;
+                }
+                
+
+                &__contentText{
+                        text-align: center;
+                        padding-bottom: 56px;
+                }
+
+                &__button_arrowLogo{  
+                    height: 18px;
+                    width: 18px;
+                }   
+
+
+                
+            @include mobile{
+
+                &__container{
+                    gap: 30px;
+                    padding-bottom: 40px;
+                }
+
+                &__caption{
+                    padding: 8px 12px;
+                }
+
+                &__captionText{
+                   font-size:10px;
+                }
+                &__content{
+                    @include flex-container(column, center,center);
+                    gap: 14px;
+                    padding: 0px 50px;
+                    
+                } 
+                &__contentHeader{
+                    text-align: center;
+                    @include text-styles('5xl','bold');
+                    line-height: 1.2;
+                }
+
+                &__contentText{
+                    color: $grey-200;
+                    text-align: center;
+                    @include text-styles('sm','medium');
+                    padding-bottom: 40px;
+            }
+
+
+                
+            }
+    }
+
+
+
+

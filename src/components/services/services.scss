@@ -1,0 +1,49 @@
+
+@use '../../scss/mixins.scss' as *;
+@use '../../scss/colors.scss' as *;
+@use '../../scss/utilities.scss' as *;
+
+.services{
+
+
+    &__container{
+        @include flex-container(column, center,center);
+        padding:80px;
+        gap: 24px;
+    }
+
+    &__headerTitle{
+        text-align:center;
+        color: black;
+        padding: 50px;
+    }
+
+    &__title{
+        display: inline;
+        padding-left: 20px;
+    }
+
+    @include mobile{
+        &__container{
+            gap: 20px;
+            padding: 30px;
+        }
+
+        &__headerTitle{
+           @include text-styles('5xl','bold');
+           padding: 30px ;
+           text-align: center;
+           line-height: 1.2;
+        }
+
+        &__title{
+            @include text-styles('5xl','bold');
+            padding-left: 10px;
+           text-align: center;
+           line-height: 1.2;
+        }
+    }
+    
+
+    
+}

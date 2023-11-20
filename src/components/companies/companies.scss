@@ -1,0 +1,26 @@
+
+@use '../../scss/colors.scss' as *;
+@use '../../scss/mixins.scss' as *;
+
+
+
+.companies{
+
+    &__container{
+        @include flex-container(row,space-between,flex-start);
+        padding: 32px;
+        background-color: $grey-900;
+    }
+
+    &__background{
+        background: $grey-200;
+        width: 154px;
+        height: 40px;
+    }
+
+
+    &__logo{
+        width: 154px;
+        height: 40px;
+    }
+}
