@@ -6,11 +6,12 @@
 
 
 .testimonials{
+    
 
     &__container{
         
         @include flex-container(column,center,center);
-        
+        width: 100%;
     }
 
 
@@ -30,7 +31,6 @@
 
             @include flex-container(column,center,center);
            flex-wrap: nowrap;
-            width: 375px;
            padding: 40px 0px;
         }
     }

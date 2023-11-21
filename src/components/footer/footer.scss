@@ -7,16 +7,21 @@
 
 
 .footer{
+
+    
    
    &__bgcontainer{
         background: url('../../icons/bg_footer.svg') no-repeat top /cover;
-        @include flex-container(column,flex-start,center);
+        @include flex-container(column,flex-start,center); 
+        padding: 80px 60px;
+        
+        
     }
 
     &__container{
         @include flex-container(column,center,normal);
-        gap: 60px;
-        padding: 80px 60px;
+        gap: 60px;  
+        width: 100%;
     }
 
     &__header{
@@ -31,14 +36,15 @@
 
     &__content{
             @include flex-container(row,space-between,center);
-            gap: 292px;
             @include text-styles('lg','regular');
             color: $grey-200;
+          
            
 
             &--agenoneEmail{
                 @include flex-container(column,center,flex-start);
                 gap: 30px;
+                width: 40vw;
             }
 
             &--logo{
@@ -82,17 +88,19 @@
         background: $grey-700;
     }
 
+    
 
     @include mobile{
 
         &__bgcontainer{
             background: $grey-900;
-            min-height: 160vh;
+
+            padding: 40px 25px;
         }
 
         &__container{
             gap: 30px;
-            padding: 40px 25px;
+           
         }
 
       
@@ -109,13 +117,14 @@
         }
 
         &__content{
-            @include flex-container(column,center,center);
+            @include flex-container(column,center,flex-start);
             gap:40px;
             @include text-styles('md','regular');
             
 
             &--agenoneEmail{
                 gap: 32px;
+                width: 100%;
             } 
             &--linksContainer{
             gap: 90px;

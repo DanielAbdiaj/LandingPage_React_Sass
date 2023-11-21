@@ -10,7 +10,7 @@
         background: $grey-50;
         border-radius: 12px;
         color: $grey-500;
-        width: 508px;
+        width: 30vw;
         height: 256px;
        
 
@@ -54,7 +54,7 @@
     @include mobile{
         
         &__container{
-            width: 327px;
+            width: 80vw;
             gap: 20px;
             font-size: smaller;
             padding: 0px 15px;

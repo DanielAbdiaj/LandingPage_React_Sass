@@ -10,23 +10,27 @@
         gap: 20px;
         padding: 16px;
         background: $grey-800;
-        border-radius: 20px;
-    }
-
-    &__image{
-        width: 598px;
-        height: 579px;
-        border-radius: 20px;
-        transition: transform 0.3s ease-out;
+        border-radius: 32px;
     }
 
     &__imageContainer{
-        position: relative;
-        overflow: hidden;
+            position: relative;
+            overflow:hidden;
+            border-radius: 32px;
+        }
+
+    &__image{
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease-out;
+        border-radius: 32px;
     }
 
+  
+
     &__imageContainer:before {
-        content: '';
+        content: ' ';
         position: absolute;
         top: 0;
         left: 0;
@@ -35,7 +39,6 @@
         background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last value) for darkness */
         opacity: 0;
         transition: opacity 0.3s ease-out;
-        border-radius: 20px;
       }
       
       &__imageContainer:hover::before {
@@ -55,11 +58,16 @@
     @include mobile{
         &__container{
             gap: 16px;
+            padding: 12px;
+            border-radius: 24px;
+        }
+
+        &__imageContainer{
+            border-radius: 24px;
         }
 
         &__image{
-            width:310px;
-            height: 300px;
+            border-radius: 24px;
         }
 
         &__title{
