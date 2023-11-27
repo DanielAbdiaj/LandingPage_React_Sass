@@ -3,6 +3,7 @@
 
 .button{
     @include inline-flex-container(row, center, center);
+    gap: 8px;
     padding: 16px 24px;
     border-radius: 100px;
     background: $primary-500;
@@ -17,17 +18,17 @@
 }
 .button__normal--large{
   @extend .button;
+  padding: 20px 32px;
   font-size: 18px;
 }
 
 .button__arrow--medium {
    @extend .button;
   font-size: 16px;
-  gap: 5px;
 }
 
 .button__arrow--large{
   @extend .button;
+  padding: 20px 24px 20px 32px;
   font-size: 18px;
-  gap: 5px;
 } 

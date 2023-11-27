@@ -14,20 +14,21 @@
         @include text-styles('4xl','semi-bold');
         background-color: $grey-50;
         border-radius: 20px;
-        width: 95%;
-       
+        box-sizing: border-box;
+        width: 100%;
     }
 
     &__container2{  
         @include flex-container(column,center,flex-start);
         gap: 24px;
+        box-sizing: border-box;
         width: 100%;
-        
     }
 
     &__header{
         @include flex-container(row,space-between,center);
-        width: 100%
+        box-sizing: border-box;
+        width: 100%;
     }
 
     &__content{
@@ -37,7 +38,6 @@
 
     &__number{
         color: $grey-700;
-        width: 50px;
     }
 
     &__number.open{
@@ -48,32 +48,30 @@
         color: $grey-700;
     }
 
-    &__title.open{
-        @include my-text-gradient(#00796D,#38C682)
- }
+            &__title.open{
+                @include my-text-gradient(#00796D,#38C682)
+            }
 
+            &__image{
+                width: 100%;
+                border-radius: 20px;
+            }
 
-    &__text{
-        @include text-styles('lg','regular');
-        color: $grey-600;
-    }
+            &__text{
+                @include text-styles('lg','regular');
+                color: $grey-600;
+            }
 
-    &__image{
-        border-radius: 20px;
-    }
+  
 
-    @include mobile{
+    @include mobile-and-tablet{
 
         &__container{
             padding:24px;
             @include text-styles('xl','bold');
             gap: 12px;
+            z-index:1;
         }
-
-        &__number{
-            width: 32px;
-        }
-
 
         &__arrowDown,&__arrowRight{
             width: 24px;
@@ -86,7 +84,7 @@
         }
 
         &__image{
-            width: 300px;
+            width: 100%;
             height: 133px;
         }
 

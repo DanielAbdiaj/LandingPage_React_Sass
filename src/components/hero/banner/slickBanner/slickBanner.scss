@@ -2,22 +2,26 @@
 @use '../../../../scss/mixins.scss' as *;
 
 
+.slick-arrow.slick-next{
+    visibility: hidden;
+}
+
 .slickBanner{
 
     &__container{
             width:260px;
-            padding-top: 20px;
     }
 
     &__iconContainer{
-        display: flex;
+       display: flex;
        align-items: center
     }
 
     &__title{
         @include text-styles('lg','semi-bold');
         text-align: center;
-        padding-bottom: 40px;
+        padding-bottom: 39px;
+        
     }
 
     &__logo{
@@ -29,8 +33,11 @@
 
     &__iconText{
         text-align: center;
+        padding-bottom: 24px;
         @include text-styles('2xl','medium');
 
     }
+
+    
 }
 

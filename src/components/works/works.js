@@ -20,20 +20,20 @@ const Works = () => {
     <div className='works__container'>
 
       <div className="works__header">
-            <h1 className="works__headerTitle">Our Project Have Been<h1 className="works__title header--primary">Done</h1></h1>
+        <div className="works__headerContent">
+            <h1 className="works__headerTitle">Our Project Have Been<span className="works__headerTitle--primary">Done</span></h1>
             <p className="works__headerText text--darkBackground">Take a look at some of our recent projects and see how we've helped other businesses elevate their brand and drive business growth.</p>
-      </div>
+        </div>
+          <div className='works__toggleContainer'>
+              <button onClick={() => handleButtonClick('UI/UX')}className='works__toggleBtn--primary button__normal--medium'><p className='works__desktopBtnText'>UI/UX Design</p><p className='works__mobileBtnText'>UI/UX</p></button>
+              <button onClick={() => handleButtonClick('DM')} className='works__toggleBtn button__normal--medium'><p className='works__desktopBtnText'>Digital Marketing</p><p className='works__mobileBtnText'>Digital</p></button>
+              <button onClick={() => handleButtonClick('SM')}className='works__toggleBtn button__normal--medium'><p className='works__desktopBtnText'>Social Media</p><p className='works__mobileBtnText'>SM</p></button>
+              <button onClick={() => handleButtonClick('Dev')} className='works__toggleBtn button__normal--medium'><p className='works__desktopBtnText'>Development</p><p className='works__mobileBtnText'>Dev</p></button>
+            </div>
+        </div>
 
 
       <div className="works__body">
-        <div className='works__toggleContainer'>
-          <button onClick={() => handleButtonClick('UI/UX')}className='works__toggleBtn--primary button__normal--medium'><p className='works__desktopBtnText'>UI/UX Design</p><p className='works__mobileBtnText'>UI/UX</p></button>
-          <button onClick={() => handleButtonClick('DM')} className='works__toggleBtn button__normal--medium'><p className='works__desktopBtnText'>Digital Marketing</p><p className='works__mobileBtnText'>Digital</p></button>
-          <button onClick={() => handleButtonClick('SM')}className='works__toggleBtn button__normal--medium'><p className='works__desktopBtnText'>Social Media</p><p className='works__mobileBtnText'>SM</p></button>
-          <button onClick={() => handleButtonClick('Dev')} className='works__toggleBtn button__normal--medium'><p className='works__desktopBtnText'>Development</p><p className='works__mobileBtnText'>Dev</p></button>
-        </div>
-
-      
             {activeButton === 'UI/UX' && 
                 <div className='works__projectContainer'>
                     <ProjectCard

@@ -3,30 +3,40 @@
 
     .banner{
 
+
+        &__normalContainer{
+            
+            padding: 80px 80px 100px 80px ;
+        }
+
+        
         &__container{
-        @include flex-container(column,center,center);
-        gap: 60px;
-            }
+                background: url('../../../icons/bg_banner.svg') no-repeat center/contain;
+        }
         
         
         &__title{
             @include text-styles('4xl','semi-bold');
             text-align: center;
+            padding-top:46px;
+            
         }
 
         &__iconsContainer{
             @include flex-container(row,center,center);
-            gap: 100px;
+            padding: 43px 60px 57px 60px; 
         }
 
         &__iconContainer{
             @include flex-container(column,center,center);
-            gap: 20px;
+            gap: 10px;
+            padding: 10px;
         }
 
         &__logo{
             height: 108px;
             width: 108px;
+            padding: 0px 76px;
         }
 
         &__iconText{
@@ -36,17 +46,51 @@
         &__mobileContainer{
             display: none;
         }
+        
+        @media screen and (max-width: 1200px){
 
-        @include mobile{
+            &__normalContainer{
+            
+                padding: 80px 100px 100px 100px ;
+            }
+
+            &__container{
+                background: url('../../../icons/bg_bannerMobile.svg') no-repeat center /contain;
+                
+            }
+            &__iconsContainer{
+                @include flex-container(column,center,center);
+                padding: 43px 80px 57px 80px; 
+                gap: 5px;
+            }
+
+            &__title{
+                @include text-styles('2xl','semi-bold');
+                padding-top:2vw;
+            }
+
+            &__logo{
+                height: 81px;
+                width: 81px;
+                padding: 0px 38px;
+            }
+            
+        }
+
+        
+
+        @media screen and (max-width: 900px){
 
             &__normalContainer{
                 display: none;
             }
             &__mobileContainer{
-                display: block;    
+                display: block;  
+                padding: 56px 24px;
+               @include flex-container(row,center,center);
             }
-
-            
         }
+
+        
     }
    

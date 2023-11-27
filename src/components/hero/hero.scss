@@ -1,91 +1,116 @@
 @use '../../scss/mixins.scss' as *;
 @use '../../scss/colors.scss' as *;
-@use '../../scss/utilities.scss' as *;
+
+
 
 
 .hero{
 
-    &__container{
-        @include flex-container(column, center,center);
-        @extend .container;
-        gap: 80px;
-        padding-bottom: 40px;    
-    }
+    // &__container{
+    //     padding-bottom: 250px; 
+    //     width: 100%   
+    // }
 
                 &__caption{
-                    
+
+                    @include flex-container(column,center,center);
+                    gap: 12px;
+                    padding-top: 100px;
+                    padding-bottom:0px;
+                    padding-left: 284px;
+                    padding-right: 282px;
+                   
+                }
+
+                &__captionText{
+                    @include text-styles('sm','medium');
                     @include inline-flex-container(row, center,flex-start);
                     gap: 10px;
                     padding: 12px 16px;
                     border-radius: 100px;
                     background: rgba(255, 255, 255, 0.10);
-                }
-
-                &__captionText{
-                    @include text-styles('sm','medium');
-                }
-
-
-                &__content{
-
-                    @include flex-container(column, center,center);
-                    gap: 40px;
-                    padding: 0px 256px;
-                } 
-
-                &__contentHeader{
                     text-align: center;
                 }
-                
-
-                &__contentText{
-                        text-align: center;
-                        padding-bottom: 56px;
-                }
-
-                &__button_arrowLogo{  
-                    height: 18px;
-                    width: 18px;
-                }   
 
 
-                
-            @include mobile{
-
-                &__container{
-                    gap: 30px;
-                    padding-bottom: 40px;
-                }
-
-                &__caption{
-                    padding: 8px 12px;
-                }
-
-                &__captionText{
-                   font-size:10px;
-                }
                 &__content{
                     @include flex-container(column, center,center);
-                    gap: 14px;
-                    padding: 0px 50px;
+                    gap: 56px;
                     
                 } 
-                &__contentHeader{
-                    text-align: center;
-                    @include text-styles('5xl','bold');
-                    line-height: 1.2;
+
+                &__contentContainer{
+                    @include flex-container(column, center,center);
+                    gap: 24px;
+                }  
+                
+                &__contentText{
+                        text-align: center;
+                        padding: 0px 90px;  
                 }
 
-                &__contentText{
-                    color: $grey-200;
-                    text-align: center;
-                    @include text-styles('sm','medium');
-                    padding-bottom: 40px;
-            }
+                &__contentHeader{
+                    text-align:center;
+                    letter-spacing: -4.44px; 
+                   &--span{
+                    @include my-text-gradient(#00796D,#38C682);
+                   }
+                }
+                
+                &__button_arrowLogo{  
+                    height: 24px;
+                    width: 24px;
+                }
+                
+                &__buttonM{
+                    display:none;
+                }
+                
 
+
+                @media screen and (max-width: 1024px){
+                            &__caption{
+                            padding: 82px 24px 0px 24px;
+                            }
+
+                            &__captionText{
+                                font-size: 10px;
+                                padding: 12px 16px;
+                                letter-spacing: 1px;
+                            }
+
+                            &__content{
+                                gap: 40px;
+                            } 
+                            &__contentContainer{
+                                gap: 14px;
+                            }  
+
+                            &__contentText{
+                                @include text-styles('sm','medium');
+                                padding: 0px 0px;  
+                            }
+
+                            &__contentHeader{
+
+                                @include text-styles('5xl','bold');
+                                text-align:center;
+                                letter-spacing: -0.72px; 
+                                line-height: 44px;
+                            }
+                            &__buttonM{
+                                display:block;
+                                @include inline-flex-container(row, center, center);
+                                gap: 8px;
+                            }
+                            &__buttonL{
+                                display:none;
+                            }
+                }
 
                 
-            }
+
+            
     }
 
 

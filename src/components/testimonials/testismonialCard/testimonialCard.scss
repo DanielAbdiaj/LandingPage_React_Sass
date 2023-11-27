@@ -10,8 +10,7 @@
         background: $grey-50;
         border-radius: 12px;
         color: $grey-500;
-        width: 30vw;
-        height: 256px;
+        width: max(430px,30vw);
        
 
         &:hover{
@@ -51,13 +50,12 @@
         flex: 1 0 0;
     }
 
-    @include mobile{
+    @include mobile-and-tablet{
         
         &__container{
-            width: 80vw;
-            gap: 20px;
+            gap: 16px;
             font-size: smaller;
-            padding: 0px 15px;
+            width: max(279px,30vw);
         }
 
         &__contentText{
@@ -70,6 +68,9 @@
 
         &__occupation{
             @include text-styles('sm','regular');
+        }
+        &__infoContainer{
+            gap: 2px;
         }
  
     }

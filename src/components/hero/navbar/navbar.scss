@@ -4,15 +4,16 @@
 
 
 
+
 .navbar{
 
     
     &__container{
-        @include flex-container(row, space-around,center);
-        padding: 2rem;
+        @include flex-container(row, space-between,center);
+        flex-shrink: 0;
         background:$grey-900;
-        width: 100%;
-        
+        padding: 0px 80px; 
+        height: 94px;
     }
 
     &__logo{
@@ -21,11 +22,8 @@
     }
 
     &__unorderedList{
-        @include flex-container(row,space-around,center);
-    }
-
-    &__list{
-        padding: 1rem 1.5rem;
+        @include flex-container(row,center,center);
+        gap: 40px;
     }
 
     &__anchor{
@@ -43,55 +41,33 @@
         border-color: $primary;
     }
 
-    &__toggleIcon{
+    &__hamburger{
         display: none;
     }
-
-
-    @include mobile{
-
+    
+   
+    @media screen and (max-width: 850px){
         &__container{
-            &--show-dropdown {
-                @include flex-container(column, center, center);  
-                padding: 32px;
-                gap: 40px;
-            }
-           
+            padding: 24px;
+            height: auto;   
         }
 
+        &__unorderedList{
+            display: none;
+        }
         &__button{
             display: none;
-            &--show-dropdown {
-                display: block;  
-              }
         }
 
-        
-            &__toggleIcon{
-                display: block;
-                border: 1px solid white;
-                border-radius: 10px;
-                padding: 7px;
-                width: 20px;
-                height: 20px;
+        &__hamburger{
+            display: block;
+        }  
+            &__logo{
+                    width: 170px;
+                    height: 70px;
             }
-        
-            &__unorderedList {
-                display: none; /* Hide the dropdown by default */
-                
-                &--show-dropdown {
-                  display: block;  
-                  @include flex-container(column,center,center);
-                  gap: 20px;
-                }
-              }
-
-        &__logo{
-            width: 170px;
-            height: 70px;
-        }
-
-
     }
-            
+
+       
+    
 }

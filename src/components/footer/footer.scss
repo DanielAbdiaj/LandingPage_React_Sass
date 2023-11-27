@@ -3,48 +3,50 @@
 
 @use '../../scss/colors.scss' as *;
 @use '../../scss/mixins.scss' as *;
+@use '../../scss/functions.scss' as *;
 
 
 
 .footer{
-
-    
    
    &__bgcontainer{
         background: url('../../icons/bg_footer.svg') no-repeat top /cover;
-        @include flex-container(column,flex-start,center); 
-        padding: 80px 60px;
-        
-        
+        width: 100%;
     }
 
     &__container{
         @include flex-container(column,center,normal);
-        gap: 60px;  
-        width: 100%;
     }
 
     &__header{
-        @include flex-container(row,space-around,center);
-        padding-bottom: 50px;
+        @include flex-container(row,space-between,center);
+        padding: 40px calculateVW(180);
+    }
+
+    &__dividerContainer{
+        padding: 0px calculateVW(80)
+        
     }
 
     &__title{
         @include text-styles('6xl','semi-bold');
-    
+        width:calculateVW(600);
     }
 
     &__content{
             @include flex-container(row,space-between,center);
             @include text-styles('lg','regular');
             color: $grey-200;
-          
-           
-
+            padding: 100px calculateVW(80) 40px calculateVW(80);
+            flex-wrap: wrap;
+                
             &--agenoneEmail{
                 @include flex-container(column,center,flex-start);
                 gap: 30px;
-                width: 40vw;
+            }
+
+            &--text{
+                width: min(413px,calculateVW(413));
             }
 
             &--logo{
@@ -54,7 +56,7 @@
 
             &--linksContainer{
                 @include flex-container(row,center,center);
-                gap: 100px;
+                gap: calculateVW(120);
                 align-items: normal;
             }
     }
@@ -65,7 +67,7 @@
     }
 
     &__link{
-        @include text-styles('md','regular');
+        @include text-styles('lg','regular');
         color: $grey-200;
 
         &--title{
@@ -75,6 +77,7 @@
 
     &__copyrights{
         text-align: center;
+        padding: 40px 0px;
 
         &--text{
             @include text-styles('lg','regular');
@@ -94,49 +97,78 @@
 
         &__bgcontainer{
             background: $grey-900;
-
-            padding: 40px 25px;
+            background: url('../../icons/bg_footerMobile.svg') no-repeat top /cover;
         }
 
-        &__container{
-            gap: 30px;
-           
-        }
-
-      
 
         &__header{
             @include flex-container(column,center,center);
             gap:24px;
+            padding: 32px calculateVW(180);;
             
         }
         &__title{
             @include text-styles('2xl','semi-bold');
             text-align: center;
-            
+            width:100%;
+        }
+
+        &__dividerContainer{
+            padding: 0px 30px            
+        }
+
+        &__ulist{
+            padding-right: 29px;
         }
 
         &__content{
             @include flex-container(column,center,flex-start);
-            gap:40px;
             @include text-styles('md','regular');
+            padding: 32px 24px;
             
 
             &--agenoneEmail{
-                gap: 32px;
+                gap: 16px;
                 width: 100%;
             } 
+
+            &--text{
+                width: max(327px,calculateVW(327));
+                padding-bottom: 16px;
+            }
+            
             &--linksContainer{
-            gap: 90px;
-            @include flex-container(row,flex-start,center);
+            gap: 24px;
+            @include flex-container(row,space-between,center);
             flex-wrap: wrap;
             align-items: normal;
             }
         }
 
-       
+        &__link{
+            font-size: 16px;
+        }
 
+        &__copyrights{
+            padding: 32px 160px 32px 24px;
+            text-align: start;
+    
+            &--text{
+                font-size: 16px;
+            }
+    
+        }
     }
 
+    @media screen and (max-width: 790px){
+        &__content{
+            gap: 40px;
+            
+            &--text{
+            width: 100%;
+        }
+        }
+        
+    }
    
 }

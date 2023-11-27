@@ -19,7 +19,6 @@ function App() {
           <Services/>
           <Achievements/>
           <Works/>
-          {/* <Companies/> */}
           <Testimonials/>
       </body>
       <footer className='App-footer'>

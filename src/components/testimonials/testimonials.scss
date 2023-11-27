@@ -2,7 +2,8 @@
 
 @use '../../scss/mixins.scss' as *;
 @use '../../scss/colors.scss' as *;
-@use '../../scss/utilities.scss' as *;
+@use '../../scss/functions.scss' as *;
+
 
 
 .testimonials{
@@ -11,7 +12,7 @@
     &__container{
         
         @include flex-container(column,center,center);
-        width: 100%;
+     
     }
 
 
@@ -21,17 +22,17 @@
         flex-wrap: wrap;
         align-content: center;
         gap: 40px;
-        padding: 40px 0px;
+        padding: 44px min(150px,calculateVW(150));
     }
 
 
-    @include mobile{
+    @include mobile-and-tablet{
 
         &__CardContainer{
 
-            @include flex-container(column,center,center);
+           @include flex-container(column,center,center);
            flex-wrap: nowrap;
-           padding: 40px 0px;
+           padding: 22px 0px;
         }
     }
 

@@ -1,46 +1,47 @@
 
 @use '../../scss/mixins.scss' as *;
 @use '../../scss/colors.scss' as *;
-@use '../../scss/utilities.scss' as *;
+
 
 .services{
 
 
     &__container{
-        @include flex-container(column, center,center);
-        padding:80px;
-        gap: 24px;
+        
+        padding:100px 80px;
     }
 
     &__headerTitle{
         text-align:center;
         color: black;
-        padding: 50px;
+        padding: 0px 100px 64px 106px;
+        letter-spacing: -1.44px;
     }
 
     &__title{
-        display: inline;
-        padding-left: 20px;
+        @include my-text-gradient(#00796D,#38C682);
+    }
+    &__cards{
+        @include inline-flex-container(column,center,flex-start);
+        gap: 24px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    @include mobile{
+    @include mobile-and-tablet{
+
         &__container{
-            gap: 20px;
-            padding: 30px;
+            padding:56px 24px;
         }
+       
 
         &__headerTitle{
            @include text-styles('5xl','bold');
-           padding: 30px ;
-           text-align: center;
-           line-height: 1.2;
+           padding: 0px 0px 32px 0px;
         }
 
         &__title{
             @include text-styles('5xl','bold');
-            padding-left: 10px;
-           text-align: center;
-           line-height: 1.2;
         }
     }
     

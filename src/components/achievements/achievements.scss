@@ -2,26 +2,29 @@
 
 @use '../../scss/colors.scss' as *;
 @use '../../scss/mixins.scss' as *;
+@use '../../scss/functions.scss' as *;
+
+
 
 
 
 .achievements{
     &__container{
-        padding: 80px 80px;
+        padding: min(80px,calculateVH(80)) min(80px,calculateVW(80));
         background: $primary-100;
     }
 
     &__text{
         @include text-styles('6xl','medium');
         color:$grey-800;
-        text-align: center;
-        padding-bottom: 64px;
+        
+        padding-bottom: 8.32vh;
     }
 
     &__numbersContainer{
         @include flex-container(row,space-evenly,center);
         background: $primary-500;
-        padding: 32px 32px;
+        padding: 4.16vh 2.24vw;
         border-radius: 20px;
     }
 
@@ -29,27 +32,33 @@
         text-align: center;
         @include text-styles('2xl','medium');
         &--number{
-            padding-bottom: 10px;
+            padding-bottom: 1.3vh;
         }
+    }
+
+    @media screen and (max-width: 1050px){
+        &__numbers{
+            font-size: 20px;
+            &--number{
+                font-size: 64px;
+            }
+        }
+        
     }
 
 
 
-        @include mobile{
+        @include mobile-and-tablet{
 
-            &__container{
-                padding: 40px 40px; 
-            }
+            
             
             &__text{
                 @include text-styles('2xl','regular');
-                padding-bottom: 32px;
             }
 
             &__numbersContainer{
                 @include flex-container(column,space-evenly,center);
-                padding: 30px 16px;
-                gap: 40px;
+                gap: 24px;
             }
             &__numbers{
                 

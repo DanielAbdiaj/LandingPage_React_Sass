@@ -36,4 +36,12 @@
       @error "Invalid font size: #{$size}. Use 'lg', 'md', 'sm', 'xl', '2xl', '3xl', '4xl', '5xl', or '6xl'.";
     }
   }
+
+  @function calculateVW($value) {
+    @return $value * 0.072vw;
+  }
+  @function calculateVH($value) {
+    @return $value * 0.13vh;
+  }
+  
   

@@ -11,7 +11,9 @@ import DropdownCard from './dropdownCard/dropdownCard';
 const Services = () => {
   return (
         <div className="services__container">
-          <h1 className="services__headerTitle">The Services We Offer<h1 className="services__title header--primary">For You</h1></h1>
+          <h1 className="services__headerTitle">The Services We Offer<span className="services__title"> For You</span></h1>
+
+          <div className="services__cards">
           <DropdownCard
             number="01"
             title="UI/UX Design"
@@ -41,6 +43,7 @@ const Services = () => {
             image={image1}
           />
 
+        </div>
         </div>
     
   );

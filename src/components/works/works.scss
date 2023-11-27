@@ -2,47 +2,56 @@
 
 @use '../../scss/mixins.scss' as *;
 @use '../../scss/colors.scss' as *;
-@use '../../scss/utilities.scss' as *;
+@use '../../scss/functions.scss' as *;
+
 
 
 .works{
 
         &__container{
-            @extend .container;
+      
             @include flex-container(column,center,center);
-            gap:50px;
-            background: url('../../icons/bg_header.png') no-repeat top/ cover ;
+            gap:64px;
+            background: url('../../icons/bg_header.png') no-repeat center/ cover ;
             background-color: $grey-900;
-            padding: 100px 80px;
+            padding: min(100px,calculateVH(100)) min(80px,calculateVW(80));
+        
+        }
+
+        &__header{
+            @include flex-container(column,center,center);
+            gap: 56px;
+            padding: 0px min(153px,calculateVW(153));
         }
 
         &__headerTitle{
                 line-height: 1;
                 text-align: center;
-                padding: 24px;
-        }
+                padding-bottom: 24px;
+                letter-spacing: -2.44px;
 
-        &__title{
-            display: inline;
-            padding-left: 20px;
+                &--primary{
+                     padding-left: 10px;
+                     @include my-text-gradient(#00796D,#38C682);
+                }
         }
 
         &__headerText{
             text-align: center;
-            width: 928px;
+            padding: 0px 20px;
         }
 
         &__body{
             @include flex-container(column,center,center);
             gap: 64px;
+            
         }
 
         &__toggleContainer{
             @include flex-container(row,center,center);
-            gap: 5px;
             border-radius: 100px;
             background: white;
-            padding: 10px 10px;
+            padding: 8px;
         }
 
         &__toggleBtn{
@@ -50,6 +59,7 @@
             color: $grey-500;
             @include text-styles('md','medium');
             cursor: pointer;
+            z-index: 2;
             
 
             &:hover{
@@ -69,31 +79,27 @@
 
     &__projectContainer{
         @include flex-container(row,center,center);
-        gap: 50px;
+        gap: 20px;
     }
 
 
-    @include mobile{
+    @include mobile-and-tablet{
 
 
-        &__container{
-            padding: 56px 24px;
+        // &__container{
+        //     padding: 56px 24px;
            
-        }
+        // }
 
         &__headerTitle{
             @include text-styles('5xl','bold');
-         }
-
-         &__title{
-            display: inline;
-            @include text-styles('5xl','bold');
-            padding-left: 10px;
+            letter-spacing: -0.72px;
          }
 
          &__headerText{
             @include text-styles('sm','medium');
-            display:inline;
+            text-align: center;
+            padding: 0px;
         }
 
         &__body{
@@ -101,9 +107,13 @@
         }
 
         &__toggleContainer{
-            gap: 2px;
-            padding: 10px 10px;
+            padding: 4px;
         }
+
+        &__toggleBtn{
+            padding: 8px 16px;
+        }
+
         &__mobileBtnText{
             display: block;
         }
@@ -113,7 +123,7 @@
 
         &__projectContainer{
             @include flex-container(column,center,center);
-            gap: 50px;
+            gap: 12px;
         }
 
     }

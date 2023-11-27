@@ -12,16 +12,18 @@ const Hero = () => {
 
                 <div className="hero__caption">
                     <p className='hero__captionText'>NUMBER ONE CREATIVE DIGITAL AGENCY</p>
+                    <div className="hero__content">
+                        <div className="hero__contentContainer">
+                                <h1 className='hero__contentHeader'><span className="hero__contentHeader--span">Smart Choices</span><br />For Your Business Growth </h1>
+                        
+                                <p className='hero__contentText text--darkBackground'>We're a team of experienced designers, developers,and marketers,passionate about delivering exceptional digital solutions. </p>
+                        </div>
+                        
+                        <button className='hero__buttonM button__arrow--medium'>Contact Us<img src={arrow} alt="#" className='hero__button_arrowLogo' /></button>
+                        <button className='hero__buttonL button__arrow--large'>Contact Us<img src={arrow} alt="#" className='hero__button_arrowLogo' /></button>
+                    </div>
                 </div>
-                <div className="hero__content">
-
-                    <h1 className='hero__contentHeader'>
-                        <h1 className="hero__contentHeader header--primary">Smart Choices</h1>For Your Business Growth </h1>
-                    {/* typewriteridea */}
-                    <p className='hero__contentText text--darkBackground'>We're a team of experienced designers, developers,and marketers,passionate about delivering exceptional digital solutions. </p>
-                  
-                    <button className='hero__button button__arrow--large'>Contact Us<img src={arrow} alt="#" className='hero__button_arrowLogo' /></button>
-                </div>
+                
 
                 <Banner/>
 
